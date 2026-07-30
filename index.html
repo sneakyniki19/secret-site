@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>★★★ ZUTRITT ★★★</title>
+    <!-- Works even if css/style.css failed to upload -->
+    <style>
+      .js-hide {
+        display: none !important;
+      }
+    </style>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="starfield" aria-hidden="true"></div>
+
+    <!-- PASSWORD GATE (only this is visible before unlock) -->
+    <section id="gate" class="screen gate-screen" aria-label="Passwort">
+      <div class="gate-frame">
+        <p class="blink neon-pink">★ UNDER CONSTRUCTION ★</p>
+        <h1 class="impact rainbow-text">ZUTRITT</h1>
+        <p class="comic gate-sub">Geheime Website™ — nur mit Passwort</p>
+        <p class="comic tip">Passwort eingeben:</p>
+        <form id="gate-form" autocomplete="off">
+          <input
+            id="password-input"
+            type="password"
+            name="password"
+            maxlength="64"
+            placeholder="********"
+            required
+            autofocus
+          />
+          <button type="submit" class="btn-go">ÖFFNEN!!!</button>
+        </form>
+        <div id="fail-stage" class="fail-stage" aria-live="polite"></div>
+        <p class="visitor comic">Besucher Nr. <span class="blink">124,621,876</span> ★ Seit 1998 online</p>
+        <p id="asset-warning" class="comic js-hide" style="color: #ff0; margin-top: 0.75rem; font-size: 0.85rem">
+          ⚠ CSS/JS nicht geladen. Auf GitHub müssen die Ordner <code>css</code>, <code>js</code> und
+          <code>assets</code> existieren.
+        </p>
+      </div>
+    </section>
+
+    <!-- Built only after correct password (keeps spoilers out of the first view) -->
+    <div id="app-root"></div>
+
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+      // If app.js did not run, show a hint on the gate
+      setTimeout(function () {
+        if (!window.__SITE_BOOTED) {
+          var w = document.getElementById("asset-warning");
+          if (w) w.classList.remove("js-hide");
+        }
+      }, 400);
+    </script>
+  </body>
+</html>
