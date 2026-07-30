@@ -97,7 +97,7 @@ window.SITE_CONFIG = {
     dud.innerHTML =
       '<span class="rocket" aria-hidden="true">🚀</span>' +
       '<div class="pffft">PFFFFT…</div>' +
-      '<p class="fail-msg comic">Falsches Passwort! Feuerwerk war nass.</p>';
+      '<p class="fail-msg comic">Falsches Passwort *__* .</p>';
     failStage.appendChild(dud);
 
     try {
